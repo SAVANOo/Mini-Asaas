@@ -1,0 +1,6 @@
+#Tue, 23 Apr 2024 15:15:49 -0300
+
+info.app.version=0.1
+info.app.name=git-exercises
+grails.env=development
+info.app.grailsVersion=5.0.0
