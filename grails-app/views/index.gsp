@@ -1,77 +1,76 @@
 <!doctype html>
 <html>
+
 <head>
-    <meta name="layout" content="main"/>
-    <title>Welcome to Grails</title>
+    <meta name="layout" content="main" />
+    <title>Mini Asaas</title>
 </head>
+
 <body>
-<content tag="nav">
-    <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Application Status <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-            <li class="dropdown-item"><a href="#">Environment: ${grails.util.Environment.current.name}</a></li>
-            <li class="dropdown-item"><a href="#">App profile: ${grailsApplication.config.grails?.profile}</a></li>
-            <li class="dropdown-item"><a href="#">App version:
-                <g:meta name="info.app.version"/></a>
-            </li>
-            <li role="separator" class="dropdown-divider"></li>
-            <li class="dropdown-item"><a href="#">Grails version:
-                <g:meta name="info.app.grailsVersion"/></a>
-            </li>
-            <li class="dropdown-item"><a href="#">Groovy version: ${GroovySystem.getVersion()}</a></li>
-            <li class="dropdown-item"><a href="#">JVM version: ${System.getProperty('java.version')}</a></li>
-            <li role="separator" class="dropdown-divider"></li>
-            <li class="dropdown-item"><a href="#">Reloading active: ${grails.util.Environment.reloadingAgentEnabled}</a></li>
-        </ul>
-    </li>
-    <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Artefacts <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-            <li class="dropdown-item"><a href="#">Controllers: ${grailsApplication.controllerClasses.size()}</a></li>
-            <li class="dropdown-item"><a href="#">Domains: ${grailsApplication.domainClasses.size()}</a></li>
-            <li class="dropdown-item"><a href="#">Services: ${grailsApplication.serviceClasses.size()}</a></li>
-            <li class="dropdown-item"><a href="#">Tag Libraries: ${grailsApplication.tagLibClasses.size()}</a></li>
-        </ul>
-    </li>
-    <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Installed Plugins <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-            <g:each var="plugin" in="${applicationContext.getBean('pluginManager').allPlugins}">
-                <li class="dropdown-item"><a href="#">${plugin.name} - ${plugin.version}</a></li>
-            </g:each>
-        </ul>
-    </li>
-</content>
+    <form class="container-form">
+        <h1 class="form__title">Cadastro</h1>
 
-<div class="svg" role="presentation">
-    <div class="grails-logo-container">
-        <asset:image src="grails-cupsonly-logo-white.svg" class="grails-logo"/>
-    </div>
-</div>
+        <fieldset class="form-group">
+            <label class="form-label" for="nome" >Nome</label>
+            <input class="form-input" placeholder="Nome completo" id="nome" type="text" name="nome">
+        </fieldset>
 
-<div id="content" role="main">
-    <section class="row colset-2-its">
-        <h1>Welcome to Grails</h1>
+        <fieldset class="form-section" id="personal_data">
+            <fieldset class="form-group">
+                <label class="form-label" for="cpf">CPF</label>
+                <input class="form-input" placeholder="123.456.789-12" id="cpf" name="cpf" type="text" >
+            </fieldset>
 
-        <p>
-            Congratulations, you have successfully started your first Grails application! At the moment
-            this is the default page, feel free to modify it to either redirect to a controller or display
-            whatever content you may choose. Below is a list of controllers that are currently deployed in
-            this application, click on each to execute its default action:
-        </p>
+            <fieldset class="form-group">
+                <label class="form-label" for="telefone">Telefone</label>
+                <input class="form-input" placeholder="(12) 12345-6879 " id="telefone" name="telefone" type="tel">
+            </fieldset>
+        </fieldset>
 
-        <div id="controllers" role="navigation">
-            <h2>Available Controllers:</h2>
-            <ul>
-                <g:each var="c" in="${grailsApplication.controllerClasses.sort { it.fullName } }">
-                    <li class="controller">
-                        <g:link controller="${c.logicalPropertyName}">${c.fullName}</g:link>
-                    </li>
-                </g:each>
-            </ul>
-        </div>
-    </section>
-</div>
+        <fieldset class="form-group">
+            <label class="form-label" for="cep" >CEP</label>
+            <input class="form-input" placeholder="12345-123" id="cep" name="cep" type="text">
+        </fieldset>
+
+
+        <fieldset class="form-group">
+            <label class="form-label" for="logradouro">Logradouro</label>
+            <input class="form-input" placeholder="Logradouro" id="logradouro" name="logradouro" type="text">
+        </fieldset>
+
+        <fieldset class="form-section">
+            <fieldset class="form-group">
+                <label class="form-label" for="estado">Estado</label>
+                <input class="form-input" placeholder="Estado" id="estado" name="estado" type="text">
+            </fieldset>
+
+            <fieldset class="form-group">
+                <label class="form-label" for="cidade">Cidade</label>
+                <input class="form-input" placeholder="Cidade" id="cidade" name="Bairro" type="text">
+            </fieldset>
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label class="form-label" for="bairro">Bairro</label>
+            <input class="form-input" placeholder="Bairro" id="bairro" name="bairro" type="text">
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label class="form-label" for="numero">Número</label>
+            <input class="form-input" placeholder="Número" id="numero" name="numero" type="text">
+        </fieldset>
+
+        <fieldset class="form-group">
+            <label class="form-label" for="complemento">Complemento</label>
+            <input class="form-input" placeholder="Bloco, apartamento, casa..." id="complemento"  name="complemento" type="text">
+        </fieldset>
+
+        <input class="form-input form_submit" value="Cadastrar" id="submit" type="submit">
+    </form>
+    <asset:image class="form-image" src="tagline.png" alt="Simbolo Asaas Branco" />
+
+    <asset:javascript src="script.js"/>
 
 </body>
+
 </html>
